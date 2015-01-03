@@ -5,9 +5,9 @@ Service.Views = Service.Views || {};
 (function () {
     'use strict';
 
-    Service.Views.AppView = Backbone.View.extend({
+    Service.Views.ServiceView = Backbone.View.extend({
 
-        template: JST['app/scripts/templates/AppView.ejs'],
+        template: JST['app/scripts/templates/serviceView.ejs'],
 
         tagName: 'div',
 

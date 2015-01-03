@@ -13,6 +13,9 @@ Service.Models = Service.Models || {};
         },
 
         defaults: {
+            title: 'My Service',
+            price: 100,
+            checked: false
         },
 
         validate: function(attrs, options) {
@@ -20,6 +23,10 @@ Service.Models = Service.Models || {};
 
         parse: function(response, options)  {
             return response;
+        },
+
+        toggle: function() {
+            this.set('checked', !this.get('checked'));
         }
     });
 
