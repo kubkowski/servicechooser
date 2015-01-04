@@ -9,20 +9,28 @@ Service.Views = Service.Views || {};
 
         template: JST['app/scripts/templates/serviceView.ejs'],
 
-        tagName: 'div',
+        tagName: 'li',
 
         id: '',
 
         className: '',
 
-        events: {},
+        events: {
+            'click': 'toggleService'
+        },
 
         initialize: function () {
             this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html('<input type="checkbox" value="1" name="' + this.model.get('title') + '" /> ' + this.model.get('title') + '<span>$' + this.model.get('price') + '</span>');
+            this.$('input').prop('checked', this.model.get('checked'));
+            return this;
+        },
+
+        toggleSevice: function () {
+            this.model.toggle();
         }
 
     });

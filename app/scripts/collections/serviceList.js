@@ -7,7 +7,7 @@ Service.Collections = Service.Collections || {};
 
     Service.Collections.ServiceList = Backbone.Collection.extend({
 
-        model: Service.Models.Service
+        model: Service.Models.Service,
 
         getChecked: function() {
             return this.where({'checked': true});
@@ -17,9 +17,9 @@ Service.Collections = Service.Collections || {};
 
 })();
 
-var services = new ServiceList([
-    new Service({ title: 'web development', price: 200}),
-    new Service({ title: 'web design', price: 250}),
-    new Service({ title: 'photography', price: 100}),
-    new Service({ title: 'coffee drinking', price: 10})
+var services = new Service.Collections.ServiceList([
+    new Service.Models.Service({ title: 'web development', price: 200}),
+    new Service.Models.Service({ title: 'web design', price: 250}),
+    new Service.Models.Service({ title: 'photography', price: 100}),
+    new Service.Models.Service({ title: 'coffee drinking', price: 10})
 ]);
